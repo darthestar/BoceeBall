@@ -32,7 +32,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -42,11 +49,96 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\PlayersContext.cs" />
+    <Compile Include="Migrations\201804171817057_AddedPlayersGamesandTeams.cs" />
+    <Compile Include="Migrations\201804171817057_AddedPlayersGamesandTeams.Designer.cs">
+      <DependentUpon>201804171817057_AddedPlayersGamesandTeams.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171913542_UpdatePlayerContext.cs" />
+    <Compile Include="Migrations\201804171913542_UpdatePlayerContext.Designer.cs">
+      <DependentUpon>201804171913542_UpdatePlayerContext.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171921470_UpdatedNotesinGames.cs" />
+    <Compile Include="Migrations\201804171921470_UpdatedNotesinGames.Designer.cs">
+      <DependentUpon>201804171921470_UpdatedNotesinGames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171933038_updatePlayerTeamFK.cs" />
+    <Compile Include="Migrations\201804171933038_updatePlayerTeamFK.Designer.cs">
+      <DependentUpon>201804171933038_updatePlayerTeamFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171935099_ReaddedTeamsIDFK.cs" />
+    <Compile Include="Migrations\201804171935099_ReaddedTeamsIDFK.Designer.cs">
+      <DependentUpon>201804171935099_ReaddedTeamsIDFK.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804171940347_updatedTeamsProps.cs" />
+    <Compile Include="Migrations\201804171940347_updatedTeamsProps.Designer.cs">
+      <DependentUpon>201804171940347_updatedTeamsProps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804172034047_updateTeamsId.cs" />
+    <Compile Include="Migrations\201804172034047_updateTeamsId.Designer.cs">
+      <DependentUpon>201804172034047_updateTeamsId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804172036273_updatedteamsid.cs" />
+    <Compile Include="Migrations\201804172036273_updatedteamsid.Designer.cs">
+      <DependentUpon>201804172036273_updatedteamsid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181839221_addedHomeTeamsIDandAwayTeamsID.cs" />
+    <Compile Include="Migrations\201804181839221_addedHomeTeamsIDandAwayTeamsID.Designer.cs">
+      <DependentUpon>201804181839221_addedHomeTeamsIDandAwayTeamsID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181842215_deleteUpdatetoTeamsID.cs" />
+    <Compile Include="Migrations\201804181842215_deleteUpdatetoTeamsID.Designer.cs">
+      <DependentUpon>201804181842215_deleteUpdatetoTeamsID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804181843067_AddedHomeTeamsID.cs" />
+    <Compile Include="Migrations\201804181843067_AddedHomeTeamsID.Designer.cs">
+      <DependentUpon>201804181843067_AddedHomeTeamsID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Games.cs" />
+    <Compile Include="Models\Players.cs" />
+    <Compile Include="Models\Teams.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804171817057_AddedPlayersGamesandTeams.resx">
+      <DependentUpon>201804171817057_AddedPlayersGamesandTeams.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171913542_UpdatePlayerContext.resx">
+      <DependentUpon>201804171913542_UpdatePlayerContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171921470_UpdatedNotesinGames.resx">
+      <DependentUpon>201804171921470_UpdatedNotesinGames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171933038_updatePlayerTeamFK.resx">
+      <DependentUpon>201804171933038_updatePlayerTeamFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171935099_ReaddedTeamsIDFK.resx">
+      <DependentUpon>201804171935099_ReaddedTeamsIDFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804171940347_updatedTeamsProps.resx">
+      <DependentUpon>201804171940347_updatedTeamsProps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804172034047_updateTeamsId.resx">
+      <DependentUpon>201804172034047_updateTeamsId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804172036273_updatedteamsid.resx">
+      <DependentUpon>201804172036273_updatedteamsid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181839221_addedHomeTeamsIDandAwayTeamsID.resx">
+      <DependentUpon>201804181839221_addedHomeTeamsIDandAwayTeamsID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181842215_deleteUpdatetoTeamsID.resx">
+      <DependentUpon>201804181842215_deleteUpdatetoTeamsID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804181843067_AddedHomeTeamsID.resx">
+      <DependentUpon>201804181843067_AddedHomeTeamsID.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
